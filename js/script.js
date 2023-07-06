@@ -77,14 +77,23 @@ function searchWeather(city) {
       const temperature = Math.round(weatherData.current.temp - 273.15); // Convert temperature to Celsius
       const windSpeed = weatherData.current.wind_speed;
       const humidity = weatherData.current.humidity;
+      const iconId = weatherData.current.weather[0].icon;
+      const currentDate = new Date();
 
-      document.getElementById("city").textContent = city;
+      document
+        .getElementById("city")
+        .querySelector(
+          "span"
+        ).textContent = `${city} ${currentDate.toDateString()}`;
       document.getElementById("temp").querySelector("span").textContent =
         temperature;
       document.getElementById("wind").querySelector("span").textContent =
         windSpeed;
       document.getElementById("humidity").querySelector("span").textContent =
         humidity;
+      document.getElementById(
+        "icon"
+      ).src = `https://openweathermap.org/img/wn/${iconId}@2x.png`;
 
       storeSearchHistory(city);
       displaySearchHistory();
@@ -105,4 +114,6 @@ document.querySelector(".cities").addEventListener("submit", function (e) {
 });
 
 // Display search history when the page loads
-document.addEventListener("DOMContentLoaded", displaySearchHistory);
+document.addEventListener("DOMContentLoaded", function () {
+  displaySearchHistory();
+});
