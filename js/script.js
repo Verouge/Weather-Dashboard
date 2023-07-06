@@ -1,10 +1,10 @@
 const apiKey = "07227df6c4027047a660a37a085c1dbc";
 
 // Function to convert city name to coordinates
-function convertCityToCoordinates(cityName) {
+function convertCityToCoordinates(cityName, stateCode = "", countryCode = "") {
   const limit = 1;
 
-  const geoApiUrl = `http://api.openweathermap.org/geo/1.0/direct?q=${cityName}&appid=${apiKey}`;
+  const geoApiUrl = `http://api.openweathermap.org/geo/1.0/direct?q=${cityName},${stateCode},${countryCode}&limit=${limit}&appid=${apiKey}`;
 
   return fetch(geoApiUrl)
     .then((response) => response.json())
@@ -55,15 +55,17 @@ function displaySearchHistory() {
       const listItem = document.createElement("li");
       listItem.textContent = city;
       searchHistoryList.appendChild(listItem);
+
+      // Add event listener to each search history item
+      listItem.addEventListener("click", function () {
+        searchWeather(city);
+      });
     });
   }
 }
 
-document.querySelector(".cities").addEventListener("submit", function (e) {
-  e.preventDefault();
-  const searchInput = document.querySelector('input[name="search"]');
-  const city = searchInput.value;
-
+// Function to search weather for a city
+function searchWeather(city) {
   convertCityToCoordinates(city)
     .then((coordinates) => {
       const latitude = coordinates.latitude;
@@ -90,6 +92,14 @@ document.querySelector(".cities").addEventListener("submit", function (e) {
     .catch((error) => {
       console.log("Error:", error);
     });
+}
+
+document.querySelector(".cities").addEventListener("submit", function (e) {
+  e.preventDefault();
+  const searchInput = document.querySelector('input[name="search"]');
+  const city = searchInput.value;
+
+  searchWeather(city);
 
   searchInput.value = ""; // Clear the input field
 });

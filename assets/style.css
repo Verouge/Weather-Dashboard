@@ -18,18 +18,25 @@ header {
   align-items: center;
 }
 
-.hero {
-  display: flex;
+.search {
+  display: inline-flex;
   margin-left: 5%;
 }
 
 .mainCity {
-  padding-left: 10%;
+  display: inline-flex;
+  position: relative;
+  left: 10%;
+  top: 50%;
+  flex-direction: column;
 }
 
 .forecast {
-  position: relative;
-  left: 23.5%;
+  margin-top: 20%;
+}
+
+.history {
+  margin-top: 10%;
 }
 
 li {
