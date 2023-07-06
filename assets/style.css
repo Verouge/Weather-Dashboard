@@ -2,17 +2,8 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-}
-
-html {
-  font-size: 62.5%;
-  scroll-behavior: smooth;
-}
-
-body {
-  font-family: "Poppins", sans-serif;
-  background-color: white;
   color: #333;
+  font-family: "Poppins", sans-serif;
 }
 
 header {
@@ -22,17 +13,25 @@ header {
   padding: 25px 40px 25px 50px;
   display: flex;
   justify-content: space-between;
-  position: fixed;
   background-color: white;
-  top: 0;
-  left: 0;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.09);
-  z-index: 200;
   align-items: center;
 }
 
-.container {
-  max-width: 107rem;
-  margin: 0 auto;
-  padding: 0 4rem;
+.hero {
+  display: flex;
+  margin-left: 5%;
+}
+
+.mainCity {
+  padding-left: 10%;
+}
+
+.forecast {
+  position: relative;
+  left: 23.5%;
+}
+
+li {
+  list-style: none;
 }
