@@ -121,27 +121,28 @@ function displayForecast(forecastData) {
 
   forecastData.forEach((forecast) => {
     const forecastItem = document.createElement("div");
-    forecastItem.className = "forecast-item list-none bg-white";
+    forecastItem.className =
+      "forecast-item list-none bg-blue-300 border-2 border-blue-300 p-2 rounded-md";
 
     const forecastDate = document.createElement("li");
-    forecastDate.className = "bg-white";
+    forecastDate.className = "bg-blue-300";
     const date = dayjs(forecast.date).format("DD MMM YYYY");
     forecastDate.textContent = date;
 
     const forecastTemp = document.createElement("li");
-    forecastTemp.className = "bg-white";
+    forecastTemp.className = "bg-blue-300";
     forecastTemp.textContent = `Temp: ${forecast.temperature}°C`;
 
     const forecastWind = document.createElement("li");
-    forecastWind.className = "bg-white";
+    forecastWind.className = "bg-blue-300";
     forecastWind.textContent = `Wind: ${forecast.windSpeed} KM/H`;
 
     const forecastHumidity = document.createElement("li");
-    forecastHumidity.className = "bg-white";
+    forecastHumidity.className = "bg-blue-300";
     forecastHumidity.textContent = `Humidity: ${forecast.humidity}%`;
 
     const forecastIcon = document.createElement("img");
-    forecastIcon.className = "bg-white";
+    forecastIcon.className = "bg-blue-300";
     forecastIcon.src = `https://openweathermap.org/img/wn/${forecast.weatherIcon}.png`;
     forecastIcon.alt = "Forecast Icon";
 
