@@ -75,10 +75,10 @@ searchBtn.addEventListener("click", () => {
             const forecastDays = [7, 15, 23, 31, 39];
             const forecastData = forecastDays.map((index) => ({
               date: weatherData.list[index].dt_txt.split(" ")[0], // Date in YYYY-MM-DD format
-              temperature: weatherData.list[index].main.temp,
-              humidity: weatherData.list[index].main.humidity,
-              windSpeed: weatherData.list[index].wind.speed,
-              weatherIcon: weatherData.list[index].weather[0].icon,
+              temperature: weatherData.list[index].main.temp, // Temperature in Celsius
+              humidity: weatherData.list[index].main.humidity, // Humidity in %
+              windSpeed: weatherData.list[index].wind.speed, // Wind speed in KM/H
+              weatherIcon: weatherData.list[index].weather[0].icon, // Weather icon code
             }));
 
             displayForecast(forecastData);
