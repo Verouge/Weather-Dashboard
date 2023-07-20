@@ -17,7 +17,7 @@ searchBtn.addEventListener("click", () => {
   const cityName = searchInput.value;
 
   // Call the geo API to get latitude and longitude
-  const geoApiUrl = `http://api.openweathermap.org/geo/1.0/direct?q=${cityName}&limit=1&appid=${apiKey}`;
+  const geoApiUrl = `https://api.openweathermap.org/geo/1.0/direct?q=${cityName}&limit=1&appid=${apiKey}`;
 
   fetch(geoApiUrl)
     .then((response) => response.json())
