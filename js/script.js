@@ -16,7 +16,7 @@ const forecastContainer = document.getElementById("forecast-container");
 searchBtn.addEventListener("click", () => {
   const cityName = searchInput.value;
 
-  // Call the geo API to get latitude and longitude
+  // Call the geo API to get latitude and longitude of the city
   const geoApiUrl = `https://api.openweathermap.org/geo/1.0/direct?q=${cityName}&limit=1&appid=${apiKey}`;
 
   fetch(geoApiUrl)
@@ -25,6 +25,7 @@ searchBtn.addEventListener("click", () => {
       if (data.length > 0) {
         const latitude = data[0].lat;
         const longitude = data[0].lon;
+        console.log(data);
 
         // Call the one call API to get weather data
         const oneCallApiUrl = `https://api.openweathermap.org/data/2.5/forecast?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=metric`;
