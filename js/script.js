@@ -114,7 +114,7 @@ function renderSearchHistory(searchHistory) {
   });
 }
 
-// Function to display the forecast for the next 5 days
+// Function to display the forecast for the next 5 day
 function displayForecast(forecastData) {
   const forecastContainer = document.getElementById("forecast-container");
   forecastContainer.innerHTML = "";
