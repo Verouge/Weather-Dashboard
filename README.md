@@ -23,5 +23,5 @@ Our mission is to provide travelers with an efficient and comprehensive weather 
 
 # Website
 
-https://verouge.github.io/Weather-Dashboard/
+https://verouge.github.io/Weatherdashboard/
 ![Screenshot](/assets/img/website-img.png)
